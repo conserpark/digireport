@@ -1,23 +1,22 @@
 @import "reset.css";
 
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 /* container 제작 */
 
 .container {
-  box-sizing: content-box;
+  overflow-x: hidden;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 100px;
-  width: 100%;
 }
 
 .contents_logo {
   width: 250px;
   margin-bottom: 50px;
+}
+
+h1,
+h5 {
+  word-break: keep-all;
 }
 
 h1 {
@@ -31,27 +30,71 @@ h5 {
   font-size: 15px;
   font-family: "Noto Sans KR", sans-serif;
   line-height: 160%;
+  padding-bottom: 50px;
 }
 
 .contents_list {
   display: grid;
-  grid-gap: 10px;
-  height: 100vh;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px; /* 그리드 항목들 사이의 간격 */
 }
 
 .contents_report {
+  position: relative;
   display: flex;
-  width: 500px;
-  height: 400px;
-  background-color: #04aa6d;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  text-decoration: none;
+}
+
+.contents_report::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.contents_report:hover::before,
+.contents_report:hover .report_name {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.report_name {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 30px;
+  z-index: 2;
+}
+
+#report_jeongok {
+  background-image: url(../img/jeongok.png);
+}
+
+#report_cheonma {
+  background-image: url(../img/cheonma.jpeg);
+}
+
+#report_songguk {
+  background-image: url(../img/songguk.jpeg);
+}
+
+#report_miruk {
+  background-image: url(../img/miruk.jpeg);
 }
 
 /* side 메뉴바 제작 */
 
 #sidenav a {
   position: absolute;
-  right: -130px; /* 화면 외부에 배치 후 안으로 들어오게 보임 */
+  right: -150px; /* 화면 외부에 배치 후 안으로 들어오게 보임 */
   text-align: center; /* 글자 정렬 */
   transition: 0.3s; /* hover 움직이는 시간 */
   padding: 15px; /* 상자 안여백 */
