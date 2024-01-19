@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>report</title>
-    <link rel="stylesheet" href="./assets/css/reportviewer.css">
+    <title>디지털보고서_전곡리(1983)</title>
+    <link rel="stylesheet" href="../../../../css/reportviewer.css">
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 </head>
 
@@ -13,7 +13,7 @@
 
     <!-- 헤더 -->
     <div class="header">
-        <p class="title">전곡리 발굴조사보고서</p>
+        <p class="title">전곡리(1983)</p>
     </div>
 
     <!-- 사이드바 -->
@@ -196,8 +196,23 @@
 
     <div class="contents">
         <div class="contents_container">
-            <p>여기는 콘텐츠가 들어갈 공간입니다.</p>
+            <h3>서울大學校 調査</h3>
+            <h4 style="text-align: right;">金元龍・裴基同</h4>
+            <div class="chapter" id="1-1-1">
+                <h3>Ⅰ. 序</h3>
+                <p>이 報告書는 第 1 次 發掘에서 第 6 次 發掘까지의 經過에 對한 綜合報告이며, 서울大學校, 國立博物館, 文化財研究所가 發掘한 結果에 對한 報告이다.</p>
+                <p>報告書의 內容은 本文과 圖版으로 나누어 지는데 本文은 1次에서 6次에 이르는 進行・地理・地質學的 環境 그리고 調査內容 報告等으로 이루어져 있다.</p>
+                <p>發掘內容 報告에는 經過・層位・出土遺物・石器分析・綜合考察 等으로 나누어 叙述하였다.</p>
+                <p>出土遺物의 説明은 圖版과 함께 실었다.</p>
+                <p>石器의 分析은 1・2次와 3・4次의 것을 따로이 試圖하였고, 3・4次 報告에서는 1・2次 및 3・4次의 發掘에 드러난 2種의 層位에 보이는 遺物의 出土樣相을 比較 考察하였다.</p>
+                <p>圖版에 있어서 層位圖와 石器實測圖版은 各 피트別로 編輯하였으며 全景 및 發掘 光景寫眞은 編輯의 편의를 위해 맨 끝으로 배치하였다. 그리고 石器의 分析表도 後半에 모아 편집하였다.
+                </p>
+            </div>
         </div>
+    </div>
+    <div class="scroll-buttons">
+        <button id="scrollToTop">▲ 맨 위로</button>
+        <button id="scrollToBottom">▼ 맨 아래로</button>
     </div>
 
     <!-- 스크립트 영역 -->
@@ -220,6 +235,23 @@
             $('.overlay').on('click', function () {
                 $('.left_sub_menu').fadeOut();
                 $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                // 맨 위로 스크롤
+                $('#scrollToTop').click(function () {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                });
+
+                // 맨 아래로 스크롤
+                $('#scrollToBottom').click(function () {
+                    var documentHeight = $(document).height();
+                    var viewportHeight = $(window).height();
+                    $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
+                });
             });
         });
     </script>

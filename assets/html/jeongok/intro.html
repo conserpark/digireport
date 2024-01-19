@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>report</title>
-    <link rel="stylesheet" href="./assets/css/reportviewer.css">
+    <title>디지털보고서_전곡리(1983)</title>
+    <link rel="stylesheet" href="../../css/reportviewer.css">
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 </head>
 
@@ -13,7 +13,7 @@
 
     <!-- 헤더 -->
     <div class="header">
-        <p class="title">전곡리 발굴조사보고서</p>
+        <p class="title">전곡리(1983)</p>
     </div>
 
     <!-- 사이드바 -->
@@ -196,8 +196,29 @@
 
     <div class="contents">
         <div class="contents_container">
-            <p>여기는 콘텐츠가 들어갈 공간입니다.</p>
+            <h3>序 文</h3>
+            <p>1978年 偶然히 發見된 全谷里遺蹟은 政府의 支援으로 其間 6次에 걸쳐 發掘되었고 韓國의 代表的 前期 舊石器 遺蹟으로서 또 東아시아에서 最初의 아슐리안系 石器群 出土遺蹟으로서 國內外 學界의
+                注目을
+                받게 되었다.</p>
+            <p>이 發掘을 主管하게 된 本人은 이 重要文化의 보다 科學的인 究明을 위해 國內의 여러 關係學者들의 參與를 圖謀하는 한편 外國의 學者들에게도 參觀의 길을 열도록 努力 하였다. 그리하여 國內의
+                舊石器考古學者들 뿐 아니라 地質學, 地形學, 植物學등 自然 科學者들의 協力도 함께 얻어 發掘事業은 많은 進陟을 보았고, J. D. Clark, 芹澤長介, 渡邊直經 등 外國學者들의 助言과
+                協助도
+                받아 全谷里文化의 性格究明에 많은 힘을 입을 수 있었다.</p>
+            <p>이 報告書는 1979年부터 1983年까지의 發掘結果에 대한 中間進展報告이며 將次의 最 終報告書에 앞선 經過報告 및 資料公開的 구실을 하려는 것이다. 따라서 各 發掘區域 의 報告는 이를 각각
+                獨立시켰으며, 그들 個別報告의 綜合化 作業은 最終 報告書로 미루기로 하였다. 따라서 發掘者에 따라 編年・文化內容 把握 등에 差異가 생기게 되었으나 이러한 見解差는 앞으로 發掘事業 進展에
+                따라
+                自然解消될 것이며 現 段階로서는 그대로 두는 것이 全谷里文化의 性格判断에 도리어 도움이 될 것이라고 생각하는 바이다.</p>
+            <p>全谷里 發掘을 위하여 애쓰신 모든 분, 이 事業의 推進을 積極 밀어주고 報告書刊行까지 맡아 주신 文化財管理局 및 文化財研究所 여러분, 그리고 發掘作業의 實質的 現 場責任者로서 数百日을 애쓴
+                裴基同君에게 深甚한 謝意를 表하는 바이다.</p>
+            <p style="text-align: center; font-size: 30px; font-weight: 600;">1983年12月</p>
+            <p style="text-align: center; font-size: 30px; font-weight: 600;">全谷里遺蹟發掘 調査團長<img class="intro_sign"
+                    src="../../img/jeongok/title/introduction-sign.jpg" loading="lazy" /></p>
+
         </div>
+    </div>
+    <div class="scroll-buttons">
+        <button id="scrollToTop">▲ 맨 위로</button>
+        <button id="scrollToBottom">▼ 맨 아래로</button>
     </div>
 
     <!-- 스크립트 영역 -->
@@ -220,6 +241,23 @@
             $('.overlay').on('click', function () {
                 $('.left_sub_menu').fadeOut();
                 $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                // 맨 위로 스크롤
+                $('#scrollToTop').click(function () {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                });
+
+                // 맨 아래로 스크롤
+                $('#scrollToBottom').click(function () {
+                    var documentHeight = $(document).height();
+                    var viewportHeight = $(window).height();
+                    $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
+                });
             });
         });
     </script>

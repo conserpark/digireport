@@ -111,17 +111,17 @@ h5 {
 
 #sidenav_about {
   top: 20px;
-  background-color: #04aa6d;
+  background-color: #f44336;
 }
 
 #sidenav_homepage {
   top: 80px;
-  background-color: #2196f3;
+  background-color: #f7c00b;
 }
 
 #sidenav_projects {
   top: 140px;
-  background-color: #f44336;
+  background-color: #2196f3;
 }
 
 #sidenav_contact {

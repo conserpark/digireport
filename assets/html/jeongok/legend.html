@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>report</title>
-    <link rel="stylesheet" href="./assets/css/reportviewer.css">
+    <title>디지털보고서_전곡리(1983)</title>
+    <link rel="stylesheet" href="../../css/reportviewer.css">
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 </head>
 
@@ -13,7 +13,7 @@
 
     <!-- 헤더 -->
     <div class="header">
-        <p class="title">전곡리 발굴조사보고서</p>
+        <p class="title">전곡리(1983)</p>
     </div>
 
     <!-- 사이드바 -->
@@ -196,8 +196,35 @@
 
     <div class="contents">
         <div class="contents_container">
-            <p>여기는 콘텐츠가 들어갈 공간입니다.</p>
+            <h3>凡例</h3>
+            <p>Ⅰ.本 報告書 1979年부터 1983年까지 5 個年동안 6次에 걸쳐 京畿道 漣川郡 全谷 面 所在 全谷里 舊石器遺蹟 發掘調査 内容 收録 報告書이다.</p>
+            <p>Ⅱ.本 報告書 執筆 있어서 1次에서 4次까지의 發掘調査 内容 參加 大學校 別 獨立하여 執筆하였고, 5次에 6次까지 發掘調査内容 서울大學校가 綜合하여 執筆하였다.</p>
+            <p>Ⅲ. 또한 第 1 次年度 參加 國立中央博物館 調査内容 第 2 次年度 參加 文化 財研究所 調査内容 서울大學校 内容 全體的으로 收録하였다.</p>
+            <p>Ⅳ.本 報告書 各 大學 調査別 本文 圖版으로 區分하여 編輯하였고 遺蹟地形 發掘調査區劃圖 別紙 하였다.</p>
+            <p>Ⅴ. 報告書 末尾 1982年 全谷里 舊石器 發掘調査에 參觀 J. D. Clark博士의 報告文 原文으로 실어 外國學者의 見解를 參考하도록 하였고, 全谷遺蹟 周邊 다른 舊石器 遺蹟現況도
+                수록하였다.
+            </p>
+            <p>Ⅵ. 報告書 執筆陣 다음과 같다.</p>
+            <ul>
+                <li>1. 서울大學校 調査 金元龍, 裴基同 (서울大博物館)</li>
+                <li>2. 嶺南大學校調査 鄭永和 (嶺南大博物館)</li>
+                <li>3. 慶熙大學校調査 黃龍渾 (慶熙大博物館)</li>
+                <li>4. 建國大學校調査 崔茂藏 (建國大博物館)</li>
+                <li>5. 古環境 地形 調査 朴東源 (서울大 地理學科)</li>
+                <li>6. 地質調査 李相萬 (서울大 地質學科)</li>
+                <li>7. 生物環境調査 張楠基 (서울大 植物學科)</li>
+                <li>8. 地質考古學 性格 李鮮馥 (美國 아리조나주립대학원)</li>
+                <li>9. 玄武岩年代測定 高柳昌弘 (日本東京大學)</li>
+                <li>10. 英文要約 金元龍 (서울大 博物館)</li>
+                <li>11. 遺蹟參觀報告文(原文)J. D. Clark (美國 버크리大學)</li>
+                <li>12. 周邊舊石器遺蹟地表調査 裴基同 (서울大 博物館)</li>
+            </ul>
+            <p>Ⅶ. 本 報告書 編輯 校正 文化財研究所에서 担當하였다.</p>
         </div>
+    </div>
+    <div class="scroll-buttons">
+        <button id="scrollToTop">▲ 맨 위로</button>
+        <button id="scrollToBottom">▼ 맨 아래로</button>
     </div>
 
     <!-- 스크립트 영역 -->
@@ -220,6 +247,23 @@
             $('.overlay').on('click', function () {
                 $('.left_sub_menu').fadeOut();
                 $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                // 맨 위로 스크롤
+                $('#scrollToTop').click(function () {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                });
+
+                // 맨 아래로 스크롤
+                $('#scrollToBottom').click(function () {
+                    var documentHeight = $(document).height();
+                    var viewportHeight = $(window).height();
+                    $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
+                });
             });
         });
     </script>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>report</title>
-    <link rel="stylesheet" href="./assets/css/reportviewer.css">
+    <title>디지털보고서_전곡리(1983)</title>
+    <link rel="stylesheet" href="../../css/reportviewer.css">
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 </head>
 
@@ -13,7 +13,7 @@
 
     <!-- 헤더 -->
     <div class="header">
-        <p class="title">전곡리 발굴조사보고서</p>
+        <p class="title">전곡리(1983)</p>
     </div>
 
     <!-- 사이드바 -->
@@ -34,9 +34,9 @@
             <!-- 왼쪽 서브 메뉴 목차 -->
             <div class="left_sub_menu">
                 <div class="sub_menu">
-                    <h2>전곡리</h2>
+                    <h2><a href="./main.html">전곡리</a></h2>
                     <ul class="big_menu">
-                        <li><a href="#">속표지</a></li>
+                        <li><a href="./inner-cover.html">속표지</a></li>
                     </ul>
                     <ul class="big_menu">
                         <li>發刊辭 </li>
@@ -196,8 +196,14 @@
 
     <div class="contents">
         <div class="contents_container">
-            <p>여기는 콘텐츠가 들어갈 공간입니다.</p>
+            <h1>全 谷 里</h1>
+            <h2>遺蹟發掘調査報告書</h2>
+            <img src="../../img/jeongok/title/title.jpg" loading="lazy" />
         </div>
+    </div>
+    <div class="scroll-buttons">
+        <button id="scrollToTop">▲ 맨 위로</button>
+        <button id="scrollToBottom">▼ 맨 아래로</button>
     </div>
 
     <!-- 스크립트 영역 -->
@@ -220,6 +226,23 @@
             $('.overlay').on('click', function () {
                 $('.left_sub_menu').fadeOut();
                 $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                // 맨 위로 스크롤
+                $('#scrollToTop').click(function () {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                });
+
+                // 맨 아래로 스크롤
+                $('#scrollToBottom').click(function () {
+                    var documentHeight = $(document).height();
+                    var viewportHeight = $(window).height();
+                    $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
+                });
             });
         });
     </script>
