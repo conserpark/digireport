@@ -12,11 +12,26 @@
   height: 50px;
   color: black;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 10px;
+}
+
+.home-button {
+  position: absolute;
+  right: 30px;
+  text-decoration: none;
+  color: black;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Center the title */
   text-align: center;
   display: block;
   font-size: 30px;
