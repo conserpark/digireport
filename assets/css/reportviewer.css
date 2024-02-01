@@ -21,8 +21,8 @@
   position: absolute;
   right: 30px;
   text-decoration: none;
-  color: black;
-  background-color: #f0f0f0;
+  color: white;
+  background-color: #bcbaed;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
@@ -269,13 +269,17 @@ a:active {
   z-index: 1000;
 }
 
-.scroll-buttons button {
+.scroll-buttons button,
+#prevPage,
+#nextPage {
   display: block;
   margin-bottom: 10px;
   padding: 10px;
   background-color: #f8f9fa;
   border: 1px solid #ddd;
   cursor: pointer;
+  width: 120px; /* Set a fixed width for all buttons */
+  text-align: left; /* Center the text inside the button */
 }
 
 sup {
@@ -286,4 +290,9 @@ sup {
 sub {
   vertical-align: sub;
   font-size: smaller;
+}
+
+#prevPage,
+#nextPage {
+  color: red;
 }
