@@ -14,7 +14,7 @@
     <!-- 헤더 -->
     <div class="header">
         <p class="title">송국리(1979)</p>
-        <a href="../../../index.html" class="home-button">돌아가기</a>
+        <a href="../../../../../index.html" class="home-button">돌아가기</a>
     </div>
 
     <!-- 사이드바 -->
@@ -175,25 +175,25 @@
                             <div class="menu_icon"><i class="arrow fas fa-angle-right"></i></div>
                         </li>
                         <ul class="small_menu">
-                            <a href="../drawing/1.html">
+                            <a href="../drawing/1-20.html">
                                 <li>1-20</li>
                             </a>
-                            <a href="../drawing/2.html">
+                            <a href="../drawing/21-40.html">
                                 <li>21-40</li>
                             </a>
-                            <a href="../drawing/3.html">
+                            <a href="../drawing/41-60.html">
                                 <li>41-60</li>
                             </a>
-                            <a href="../drawing/4.html">
+                            <a href="../drawing/61-80.html">
                                 <li>61-80</li>
                             </a>
-                            <a href="../drawing/5.html">
+                            <a href="../drawing/81-100.html">
                                 <li>81-100</li>
                             </a>
-                            <a href="../drawing/6.html">
+                            <a href="../drawing/101-120.html">
                                 <li>101-120</li>
                             </a>
-                            <a href="../drawing/7.html">
+                            <a href="../drawing/121-127.html">
                                 <li>121-127</li>
                             </a>
                         </ul>
@@ -206,22 +206,22 @@
                             <div class="menu_icon"><i class="arrow fas fa-angle-right"></i></div>
                         </li>
                         <ul class="small_menu">
-                            <a href="../figure/1.html">
+                            <a href="../figure/1-20.html">
                                 <li>1-20</li>
                             </a>
-                            <a href="../figure/2.html">
+                            <a href="../figure/21-40.html">
                                 <li>21-40</li>
                             </a>
-                            <a href="../figure/3.html">
+                            <a href="../figure/41-60.html">
                                 <li>41-60</li>
                             </a>
-                            <a href="../figure/4.html">
+                            <a href="../figure/61-80.html">
                                 <li>61-80</li>
                             </a>
-                            <a href="../figure/5.html">
+                            <a href="../figure/81-100.html">
                                 <li>81-100</li>
                             </a>
-                            <a href="../figure/6.html">
+                            <a href="../figure/101-119.html">
                                 <li>101-119</li>
                             </a>
                         </ul>
@@ -241,55 +241,56 @@
                 <figcaption></figcaption>
             </figure>
         </div>
+    </div>
 
-        <div class="scroll-buttons">
-            <a href='./2.html'><button id="prevPage" class="scroll-button">◀ 이전 장으로</button></a>
-            <button id="scrollToTop" class="scroll-button">▲ 맨 위로</button>
-            <button id="scrollToBottom" class="scroll-button">▼ 맨 아래로</button>
-            <a href='./4.html'><button id="nextPage" class="scroll-button">▶ 다음 장으로</button></a>
-        </div>
+    <div class="scroll-buttons">
+        <a href='./1.html'><button id="prevPage" class="scroll-button">◀ 이전 장으로</button></a>
+        <button id="scrollToTop" class="scroll-button">▲ 맨 위로</button>
+        <button id="scrollToBottom" class="scroll-button">▼ 맨 아래로</button>
+        <a href='./3.html'><button id="nextPage" class="scroll-button">▶ 다음 장으로</button></a>
+    </div>
 
-        <!-- 스크립트 영역 -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script>
+    <!-- 스크립트 영역 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".has_sub a").click(function (event) {
+                event.preventDefault();
+            });
+            $(".left_sub_menu").hide();
+            $(".has_sub").click(function () {
+                $(".left_sub_menu").fadeToggle(300);
+            });
+            // 왼쪽메뉴 드롭다운
+            $(".sub_menu ul.small_menu").hide();
+            $(".sub_menu ul.big_menu").click(function () {
+                $("ul", this).slideToggle(300);
+            });
+            // 외부 클릭 시 좌측 사이드 메뉴 숨기기
+            $('.overlay').on('click', function () {
+                $('.left_sub_menu').fadeOut();
+                $('.hide_sidemenu').fadeIn();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
             $(function () {
-                $(".has_sub a").click(function (event) {
-                    event.preventDefault();
+                // 맨 위로 스크롤
+                $('#scrollToTop').click(function () {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
                 });
-                $(".left_sub_menu").hide();
-                $(".has_sub").click(function () {
-                    $(".left_sub_menu").fadeToggle(300);
-                });
-                // 왼쪽메뉴 드롭다운
-                $(".sub_menu ul.small_menu").hide();
-                $(".sub_menu ul.big_menu").click(function () {
-                    $("ul", this).slideToggle(300);
-                });
-                // 외부 클릭 시 좌측 사이드 메뉴 숨기기
-                $('.overlay').on('click', function () {
-                    $('.left_sub_menu').fadeOut();
-                    $('.hide_sidemenu').fadeIn();
-                });
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $(function () {
-                    // 맨 위로 스크롤
-                    $('#scrollToTop').click(function () {
-                        $('html, body').animate({ scrollTop: 0 }, 'fast');
-                    });
 
-                    // 맨 아래로 스크롤
-                    $('#scrollToBottom').click(function () {
-                        var documentHeight = $(document).height();
-                        var viewportHeight = $(window).height();
-                        $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
-                    });
+                // 맨 아래로 스크롤
+                $('#scrollToBottom').click(function () {
+                    var documentHeight = $(document).height();
+                    var viewportHeight = $(window).height();
+                    $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
                 });
             });
-        </script>
-        <script src="https://kit.fontawesome.com/c1b1954a19.js" crossorigin="anonymous"></script>
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/c1b1954a19.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
