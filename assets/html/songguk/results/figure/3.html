@@ -236,58 +236,60 @@
 
     <div class="contents">
         <div class="contents_container">
-            <img src="../../img/songguk/title/cover.png" loading="lazy" />
+            <figure>
+                <img src="../../../../img//songguk/" loading="lazy" />
+                <figcaption></figcaption>
+            </figure>
         </div>
-    </div>
 
-    <div class="scroll-buttons">
-        <a href='./2.html'><button id="prevPage" class="scroll-button">◀ 이전 장으로</button></a>
-        <button id="scrollToTop" class="scroll-button">▲ 맨 위로</button>
-        <button id="scrollToBottom" class="scroll-button">▼ 맨 아래로</button>
-        <a href='./4.html'><button id="nextPage" class="scroll-button">▶ 다음 장으로</button></a>
-    </div>
+        <div class="scroll-buttons">
+            <a href='./2.html'><button id="prevPage" class="scroll-button">◀ 이전 장으로</button></a>
+            <button id="scrollToTop" class="scroll-button">▲ 맨 위로</button>
+            <button id="scrollToBottom" class="scroll-button">▼ 맨 아래로</button>
+            <a href='./4.html'><button id="nextPage" class="scroll-button">▶ 다음 장으로</button></a>
+        </div>
 
-    <!-- 스크립트 영역 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $(".has_sub a").click(function (event) {
-                event.preventDefault();
-            });
-            $(".left_sub_menu").hide();
-            $(".has_sub").click(function () {
-                $(".left_sub_menu").fadeToggle(300);
-            });
-            // 왼쪽메뉴 드롭다운
-            $(".sub_menu ul.small_menu").hide();
-            $(".sub_menu ul.big_menu").click(function () {
-                $("ul", this).slideToggle(300);
-            });
-            // 외부 클릭 시 좌측 사이드 메뉴 숨기기
-            $('.overlay').on('click', function () {
-                $('.left_sub_menu').fadeOut();
-                $('.hide_sidemenu').fadeIn();
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
+        <!-- 스크립트 영역 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
             $(function () {
-                // 맨 위로 스크롤
-                $('#scrollToTop').click(function () {
-                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                $(".has_sub a").click(function (event) {
+                    event.preventDefault();
                 });
-
-                // 맨 아래로 스크롤
-                $('#scrollToBottom').click(function () {
-                    var documentHeight = $(document).height();
-                    var viewportHeight = $(window).height();
-                    $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
+                $(".left_sub_menu").hide();
+                $(".has_sub").click(function () {
+                    $(".left_sub_menu").fadeToggle(300);
+                });
+                // 왼쪽메뉴 드롭다운
+                $(".sub_menu ul.small_menu").hide();
+                $(".sub_menu ul.big_menu").click(function () {
+                    $("ul", this).slideToggle(300);
+                });
+                // 외부 클릭 시 좌측 사이드 메뉴 숨기기
+                $('.overlay').on('click', function () {
+                    $('.left_sub_menu').fadeOut();
+                    $('.hide_sidemenu').fadeIn();
                 });
             });
-        });
-    </script>
-    <script src="https://kit.fontawesome.com/c1b1954a19.js" crossorigin="anonymous"></script>
+        </script>
+        <script>
+            $(document).ready(function () {
+                $(function () {
+                    // 맨 위로 스크롤
+                    $('#scrollToTop').click(function () {
+                        $('html, body').animate({ scrollTop: 0 }, 'fast');
+                    });
+
+                    // 맨 아래로 스크롤
+                    $('#scrollToBottom').click(function () {
+                        var documentHeight = $(document).height();
+                        var viewportHeight = $(window).height();
+                        $('html, body').animate({ scrollTop: documentHeight - viewportHeight }, 'fast');
+                    });
+                });
+            });
+        </script>
+        <script src="https://kit.fontawesome.com/c1b1954a19.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
